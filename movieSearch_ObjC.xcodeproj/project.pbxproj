@@ -8,24 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		3B178D5C21554204006459C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B178D5B21554204006459C3 /* AppDelegate.m */; };
-		3B178D5F21554204006459C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B178D5E21554204006459C3 /* ViewController.m */; };
 		3B178D6221554204006459C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B178D6021554204006459C3 /* Main.storyboard */; };
 		3B178D6421554204006459C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B178D6321554204006459C3 /* Assets.xcassets */; };
 		3B178D6721554204006459C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B178D6521554204006459C3 /* LaunchScreen.storyboard */; };
 		3B178D6A21554204006459C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B178D6921554204006459C3 /* main.m */; };
+		3B178D78215543D1006459C3 /* KWEMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B178D77215543D1006459C3 /* KWEMovie.m */; };
+		3B178D7B215543F1006459C3 /* KWEMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B178D7A215543F1006459C3 /* KWEMovieController.m */; };
+		3B178D8421555DE3006459C3 /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B178D8321555DE3006459C3 /* MovieListTableViewController.swift */; };
+		3B178D8621555DFC006459C3 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B178D8521555DFC006459C3 /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B178D5721554204006459C3 /* movieSearch_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieSearch_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B178D5A21554204006459C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3B178D5B21554204006459C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3B178D5D21554204006459C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3B178D5E21554204006459C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3B178D6121554204006459C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B178D6321554204006459C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B178D6621554204006459C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B178D6821554204006459C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B178D6921554204006459C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B178D76215543D1006459C3 /* KWEMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KWEMovie.h; sourceTree = "<group>"; };
+		3B178D77215543D1006459C3 /* KWEMovie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KWEMovie.m; sourceTree = "<group>"; };
+		3B178D79215543F1006459C3 /* KWEMovieController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KWEMovieController.h; sourceTree = "<group>"; };
+		3B178D7A215543F1006459C3 /* KWEMovieController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KWEMovieController.m; sourceTree = "<group>"; };
+		3B178D8221555DE3006459C3 /* movieSearch_ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "movieSearch_ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		3B178D8321555DE3006459C3 /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
+		3B178D8521555DFC006459C3 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +66,70 @@
 		3B178D5921554204006459C3 /* movieSearch_ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				3B178D7521554393006459C3 /* ViewControllers */,
+				3B178D742155438C006459C3 /* Views */,
+				3B178D732155437D006459C3 /* Networking Client */,
+				3B178D7221554377006459C3 /* Model */,
+				3B178D7121554371006459C3 /* UI */,
+				3B178D7021554360006459C3 /* Resources */,
+			);
+			path = movieSearch_ObjC;
+			sourceTree = "<group>";
+		};
+		3B178D7021554360006459C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				3B178D5A21554204006459C3 /* AppDelegate.h */,
 				3B178D5B21554204006459C3 /* AppDelegate.m */,
-				3B178D5D21554204006459C3 /* ViewController.h */,
-				3B178D5E21554204006459C3 /* ViewController.m */,
-				3B178D6021554204006459C3 /* Main.storyboard */,
 				3B178D6321554204006459C3 /* Assets.xcassets */,
 				3B178D6521554204006459C3 /* LaunchScreen.storyboard */,
 				3B178D6821554204006459C3 /* Info.plist */,
 				3B178D6921554204006459C3 /* main.m */,
 			);
-			path = movieSearch_ObjC;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3B178D7121554371006459C3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3B178D6021554204006459C3 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3B178D7221554377006459C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B178D76215543D1006459C3 /* KWEMovie.h */,
+				3B178D77215543D1006459C3 /* KWEMovie.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B178D732155437D006459C3 /* Networking Client */ = {
+			isa = PBXGroup;
+			children = (
+				3B178D79215543F1006459C3 /* KWEMovieController.h */,
+				3B178D7A215543F1006459C3 /* KWEMovieController.m */,
+			);
+			path = "Networking Client";
+			sourceTree = "<group>";
+		};
+		3B178D742155438C006459C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B178D8521555DFC006459C3 /* MovieTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3B178D7521554393006459C3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B178D8321555DE3006459C3 /* MovieListTableViewController.swift */,
+				3B178D8221555DE3006459C3 /* movieSearch_ObjC-Bridging-Header.h */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,11 +158,13 @@
 		3B178D4F21554204006459C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KWE;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Kamil Wrobel";
 				TargetAttributes = {
 					3B178D5621554204006459C3 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -141,9 +204,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B178D5F21554204006459C3 /* ViewController.m in Sources */,
 				3B178D6A21554204006459C3 /* main.m in Sources */,
 				3B178D5C21554204006459C3 /* AppDelegate.m in Sources */,
+				3B178D8621555DFC006459C3 /* MovieTableViewCell.swift in Sources */,
+				3B178D7B215543F1006459C3 /* KWEMovieController.m in Sources */,
+				3B178D78215543D1006459C3 /* KWEMovie.m in Sources */,
+				3B178D8421555DE3006459C3 /* MovieListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,15 +349,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EAUJPVR66;
-				INFOPLIST_FILE = movieSearch_ObjC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/movieSearch_ObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xwrobelekx.movieSearch-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "movieSearch_ObjC/ViewControllers/movieSearch_ObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -300,15 +370,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EAUJPVR66;
-				INFOPLIST_FILE = movieSearch_ObjC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/movieSearch_ObjC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xwrobelekx.movieSearch-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "movieSearch_ObjC/ViewControllers/movieSearch_ObjC-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
