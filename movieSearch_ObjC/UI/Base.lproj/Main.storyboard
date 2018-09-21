@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cOI-TJ-MVP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,17 +11,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Movie List:-->
         <scene sceneID="X27-0k-B4d">
             <objects>
-                <tableViewController id="xQb-0N-Lh5" sceneMemberID="viewController">
+                <tableViewController id="xQb-0N-Lh5" customClass="MovieListTableViewController" customModule="movieSearch_ObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ukf-Oe-7Uv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Enter Movie Title:" id="rnI-Nd-uFF">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="479" id="aPq-54-B5Z">
-                                <rect key="frame" x="0.0" y="28" width="375" height="479"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="479" id="aPq-54-B5Z" customClass="MovieTableViewCell" customModule="movieSearch_ObjC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="479"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPq-54-B5Z" id="6p8-x6-Wcf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="478.5"/>
@@ -66,6 +71,12 @@
                                         <constraint firstItem="BPZ-Cf-QvC" firstAttribute="centerX" secondItem="6p8-x6-Wcf" secondAttribute="centerX" id="Zq5-wD-KSb"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieImageView" destination="Gi1-85-8CG" id="RC1-bW-m6H"/>
+                                    <outlet property="movieOverViewTextView" destination="m4w-mW-w3v" id="Gkk-cr-60L"/>
+                                    <outlet property="movieRatingLabel" destination="KvA-R6-jIu" id="xyW-Iq-Tlv"/>
+                                    <outlet property="movieTitleLable" destination="17t-8N-1wQ" id="qvr-4q-NvY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -73,7 +84,10 @@
                             <outlet property="delegate" destination="xQb-0N-Lh5" id="MIK-HW-8Ef"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="eEt-0N-vn0"/>
+                    <navigationItem key="navigationItem" title="Movie List:" id="eEt-0N-vn0"/>
+                    <connections>
+                        <outlet property="movieSearchBar" destination="rnI-Nd-uFF" id="u0i-8o-cnp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Da-h2-R6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

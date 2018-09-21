@@ -10,15 +10,9 @@
 #import "KWEMovie.h"
 
 @implementation KWEMovieController
-// api_key=df27e0c0e10e50e785b375686ccc7895
-
-// example URL: https://api.themoviedb.org/3/movie/550?api_key=df27e0c0e10e50e785b375686ccc7895
-
-// to search : query = String   -> min lenght is 1
 
 
-//FIXME: Keep an eye on the "?" at the end pof the url
-static NSString *baseURLAsString = @"https://api.themoviedb.org/3/movie/550?";
+static NSString *baseURLAsString = @"https://api.themoviedb.org/3/search/movie";
 
 
 
@@ -41,16 +35,16 @@ static NSString *baseURLAsString = @"https://api.themoviedb.org/3/movie/550?";
 
 
 //MARK: - Fetch Method
--(void)fetchMovieData: (NSString *)movieName completion:(void(^)(BOOL))completion
+-(void)fetchMovieData: (NSString *)movieName completion:(void(^)(NSArray<KWEMovie *> * _Nullable movie))completion
 {
     NSURL *baseURL = [NSURL URLWithString:baseURLAsString];
     
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:true];
     NSURLQueryItem *apiKeyQuerryItem = [[NSURLQueryItem alloc] initWithName: @"api_key" value: @"df27e0c0e10e50e785b375686ccc7895"];
-    NSURLQueryItem *searchTermQuerryItem = [[NSURLQueryItem alloc]initWithName: @"querry" value: movieName];
+    NSURLQueryItem *searchTermQuerryItem = [[NSURLQueryItem alloc]initWithName: @"query" value: movieName];
     components.queryItems = @[apiKeyQuerryItem, searchTermQuerryItem];
     
-    NSLog(@"🏁🏁🏁 @%    ", [components URL]);
+    NSLog(@"🏁🏁🏁 %@    ", [components URL]);
     
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL: [components URL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -78,14 +72,16 @@ static NSString *baseURLAsString = @"https://api.themoviedb.org/3/movie/550?";
         
         //FIXME: - Idk if this is good - should i allocate the array frist?
         NSMutableArray *resultsArray = topLevelJSONDictionary[@"results"];
+        NSMutableArray<KWEMovie *> *results = [[NSMutableArray alloc] init];
         
         for (NSDictionary *allResults in resultsArray){
             KWEMovie *singleResult = [[KWEMovie alloc] initWithResultDictionary: allResults];
-            [resultsArray addObject : singleResult];
+            [results addObject : singleResult];
         }
         
-        self.searchResults = resultsArray;
-        completion(true);
+//        self.searchResults = results;
+//        self.searchResults = resultsArray;
+        completion(results);
     
     }];
     [dataTask resume];

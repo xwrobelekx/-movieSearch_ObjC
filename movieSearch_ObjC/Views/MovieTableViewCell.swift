@@ -9,6 +9,22 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
+    
+    //MARK: - properties
+    var movie: KWEMovie? {
+        didSet{
+            updateViews()
+        }
+    }
+    
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var movieTitleLable: UILabel!
+    @IBOutlet weak var movieRatingLabel: UILabel!
+    @IBOutlet weak var movieOverViewTextView: UITextView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +35,15 @@ class MovieTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    //MARK: - Helper Methods
+    func updateViews(){
+        guard let movie = movie else {return}
+        movieTitleLable.text = movie.title
+        movieRatingLabel.text = String(movie.rating)
+        movieOverViewTextView.text = movie.overView
     }
 
 }

@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KWEMovie.h"
 
 @interface KWEMovieController : NSObject
 
 +(KWEMovieController *)shared;
 
--(void)fetchMovieData: (NSString *)movieName completion:(void(^)(BOOL))completion;
+-(void)fetchMovieData: (NSString *)movieName completion:(void(^)(NSArray<KWEMovie *> * _Nullable movie))completion;
 
-@property (nonatomic, copy) NSMutableArray *searchResults;
+@property (nonatomic, copy) NSMutableArray<KWEMovie*> *searchResults;
 
 
 @end
