@@ -10,17 +10,14 @@
 
 @interface KWEMovie : NSObject
 
-
-//title:        String
-//poster_path : String -> but needs to be added to url - its not a full image url
-//overview :    String
-//vote_average: Int
-
+NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly) NSInteger rating;
 @property (nonatomic, readonly, copy) NSString *overView;
 @property (nonatomic, readonly, copy) NSString *posterUrlComponent;
+
+NS_ASSUME_NONNULL_END
 
 @end
 

@@ -31,10 +31,11 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
             self.movieTitles = movies
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.resignFirstResponder()
+                self.movieSearchBar.text = ""
             }
         }
     }
-    
     
     
     // MARK: - Table view data source
@@ -45,7 +46,6 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
         return movies.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell else {return UITableViewCell()}
         guard let movies = movieTitles else {return UITableViewCell()}
@@ -53,9 +53,4 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
         cell.movie = movie
         return cell
     }
-    
-    
-    
-    
-    
 }
