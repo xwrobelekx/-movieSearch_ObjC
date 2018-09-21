@@ -29,6 +29,9 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
         KWEMovieController.shared().fetchMovieData(searchTitle) { (arrayOfMovies) in
             guard let movies = arrayOfMovies else {return}
             self.movieTitles = movies
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     

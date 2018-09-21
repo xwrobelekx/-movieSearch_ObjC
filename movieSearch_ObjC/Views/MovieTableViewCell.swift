@@ -41,9 +41,12 @@ class MovieTableViewCell: UITableViewCell {
     //MARK: - Helper Methods
     func updateViews(){
         guard let movie = movie else {return}
-        movieTitleLable.text = movie.title
-        movieRatingLabel.text = String(movie.rating)
-        movieOverViewTextView.text = movie.overView
+        DispatchQueue.main.async {
+            self.movieTitleLable.text = movie.title
+            self.movieRatingLabel.text = String(movie.rating)
+            self.movieOverViewTextView.text = movie.overView
+            
+        }
     }
 
 }
