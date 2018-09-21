@@ -43,7 +43,7 @@ class MovieTableViewCell: UITableViewCell {
         guard let movie = movie else {return}
         DispatchQueue.main.async {
             self.movieTitleLable.text = movie.title
-            self.movieRatingLabel.text = String(movie.rating)
+            self.movieRatingLabel.text = "\(movie.rating)"
             self.movieOverViewTextView.text = movie.overView
             
         }

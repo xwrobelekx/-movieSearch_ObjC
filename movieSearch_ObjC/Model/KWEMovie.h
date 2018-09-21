@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, copy) NSString *title;
-@property (nonatomic, readonly) NSInteger rating;
+@property (nonatomic, readonly) NSNumber *rating;
 @property (nonatomic, readonly, copy) NSString *overView;
 @property (nonatomic, readonly, copy) NSString *posterUrlComponent;
 

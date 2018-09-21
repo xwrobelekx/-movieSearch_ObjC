@@ -20,7 +20,8 @@
     NSString *title = singleResultDictionary[@"title"];
     NSString *overView = singleResultDictionary[@"overview"];
     NSString *posterURLComponent = singleResultDictionary[@"poster_path"];
-    NSInteger rating = singleResultDictionary[@"vote_average"];
+    NSNumber *rating = singleResultDictionary[@"vote_average"];
+    
     
     self = [self init];
     if (self) {
